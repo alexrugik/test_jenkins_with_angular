@@ -4,23 +4,22 @@ pipeline {
         stage('Lint') {
             steps {
                 bat 'node -v';
-                bat 'npm -v'
-                npm run lint;
+                bat 'npm -v';
+                bat 'npm run lint';
             }
         }
        stage('Test') {
             steps {
                 bat 'node -v';
-                bat 'npm -v'
-                npm run test;
+                bat 'npm -v';
+                bat 'npm run test';
             }
         }
         stage('Build') {
             steps {
                 bat 'node -v';
-                bat 'npm -v'
-                npm run build;
-                npm run test;
+                bat 'npm -v';
+                bat 'npm run build';
             }
         }
     }
