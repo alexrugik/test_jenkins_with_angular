@@ -1,9 +1,26 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('Lint') {
             steps {
-                bat 'node --version'
+                bat 'node -v';
+                bat 'npm -v'
+                npm run lint;
+            }
+        }
+       stage('Test') {
+            steps {
+                bat 'node -v';
+                bat 'npm -v'
+                npm run test;
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'node -v';
+                bat 'npm -v'
+                npm run build;
+                npm run test;
             }
         }
     }
