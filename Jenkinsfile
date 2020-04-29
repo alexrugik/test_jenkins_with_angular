@@ -1,11 +1,17 @@
 pipeline {
     agent any
     stages {
+        stage('PredBuild') {
+           steps {
+                  bat 'node -v';
+                  bat 'npm -v';
+                  bat 'npm install';
+              }
+        }
         stage('Lint') {
             steps {
                 bat 'node -v';
                 bat 'npm -v';
-                bat 'ng -v';
                 bat 'npm run lint';
             }
         }
