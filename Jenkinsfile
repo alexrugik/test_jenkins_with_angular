@@ -5,6 +5,7 @@ pipeline {
             steps {
                 bat 'node -v';
                 bat 'npm -v';
+                bat 'ng -v';
                 bat 'npm run lint';
             }
         }
